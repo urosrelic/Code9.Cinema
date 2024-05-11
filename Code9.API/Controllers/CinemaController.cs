@@ -43,5 +43,26 @@ namespace Code9.API.Controllers
             var cinema = await _mediator.Send(addCinemaCommand);
             return Ok(cinema);
         }
+
+        [HttpPut("update-cinema/{id}")]
+        public async Task<ActionResult<Cinema>> UpdateCinema([FromRoute] Guid id, UpdateCinemaRequest request)
+        {
+
+            var updateCinemaCommand = new UpdateCinemaCommand
+            {
+
+                Id = id,
+                cinema = new Cinema
+                {
+                    Name = request.Name,
+                    City = request.City,
+                    Street = request.Street,
+                    NumberOfAuditoriums = request.NumberOfAuditoriums
+                }
+            };
+            
+            return await _mediator.Send(updateCinemaCommand);
+        }
+        
     }
 }
