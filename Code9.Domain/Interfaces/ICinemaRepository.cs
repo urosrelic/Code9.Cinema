@@ -5,8 +5,8 @@ namespace Code9.Domain.Interfaces
     public interface ICinemaRepository
     {
         public Task<List<Cinema>> GetAllCinemas();
-        public Task addCinema(Cinema cinema);
-        public Task updateCinema(Cinema cinema);
+        public Task AddCinema(Cinema cinema);
+        public Task UpdateCinema(Cinema cinema);
     }
 
     
