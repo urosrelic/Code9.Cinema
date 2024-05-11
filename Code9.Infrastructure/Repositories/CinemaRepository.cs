@@ -13,7 +13,7 @@ namespace Code9.Infrastructure.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<List<Cinema>> GetAllCinemas()
+        public async Task<List<Cinema>> GetAllCinema()
         {
             return await _dbContext.Cinemas.ToListAsync();
         }
