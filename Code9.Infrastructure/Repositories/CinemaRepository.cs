@@ -29,5 +29,10 @@ namespace Code9.Infrastructure.Repositories
             _dbContext.Update(cinema);
             await _dbContext.SaveChangesAsync();
         }
+
+        public async Task<Cinema> findById(Guid id)
+        {
+            return await _dbContext.Cinemas.FindAsync(id);
+        }
     }
 }

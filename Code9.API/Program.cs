@@ -33,7 +33,6 @@ if (app.Environment.IsDevelopment())
     dbContext.Database.EnsureCreated();
 }
 
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
